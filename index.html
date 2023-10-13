@@ -13,7 +13,7 @@
     <style>
       body {
         font-family: "Inter", sans-serif;
-        background-color: #81b1729d;
+        background-color: #67e73f9d;
       }
       .container {
         max-width: 400px;
@@ -23,51 +23,59 @@
         border-radius: 5px;
       }
       h1 {
-        text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        color: #1bc24d;
       }
       .row {
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
         margin: 10px 0;
       }
       .box {
         padding: 10px;
-        width: 60vh;
+        width: 80%;
         border: 1px solid #ccc;
         border-radius: 5px;
+        margin-bottom: 10px;
       }
       .form-group {
-        margin-left: 10px;
+        text-align: left;
       }
       input[type="button"] {
-        margin-top: 10px;
         background-color: #1bc24d;
         color: #fff;
         border: none;
         border-radius: 5px;
-        padding: 10px 20px;
+        padding: 10px 10px;
         cursor: pointer;
+        width: auto;
       }
       ul {
         list-style-type: decimal;
         padding: 0;
+        margin-left: 10px;
         text-align: left;
         width: 90%;
       }
       li {
-        /* border: 1px solid #ccc; */
         border-radius: 5px;
         padding: 10px;
         margin: 5px 0;
-        /* background-color: #f9f9f9; */
         text-align: left;
+      }
+
+      @media (min-width: 768px) {
+        .box {
+          width: 60%;
+          margin-right: 10px;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1 style="color: #1bc24d">To-Do List</h1>
+      <h1>To-Do List</h1>
       <div class="row">
         <form action="" onsubmit="return false;">
           <div class="input-group">
