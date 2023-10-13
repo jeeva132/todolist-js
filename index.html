@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>To-Do List</title>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #81b1729d;
+      }
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .row {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
+      }
+      .box {
+        padding: 10px;
+        width: 60vh;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .form-group {
+        margin-left: 10px;
+      }
+      input[type="button"] {
+        margin-top: 10px;
+        background-color: #1bc24d;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      ul {
+        list-style-type: decimal;
+        padding: 0;
+        text-align: left;
+        width: 90%;
+      }
+      li {
+        /* border: 1px solid #ccc; */
+        border-radius: 5px;
+        padding: 10px;
+        margin: 5px 0;
+        /* background-color: #f9f9f9; */
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="color: #1bc24d">To-Do List</h1>
+      <div class="row">
+        <form action="" onsubmit="return false;">
+          <div class="input-group">
+            <input type="text" placeholder="Todo items" class="box" />
+          </div>
+          <div class="form-group">
+            <input type="button" value="Add" onclick="add_item()" />
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <ul class="list_item"></ul>
+      </div>
+    </div>
+    <script>
+      function add_item() {
+        let item = document.querySelector(".box");
+        let list_item = document.querySelector(".list_item");
+        if (item.value !== "") {
+          let make_li = document.createElement("li");
+          make_li.appendChild(document.createTextNode(item.value));
+          list_item.appendChild(make_li);
+          item.value = "";
+          make_li.onclick = function () {
+            this.parentNode.removeChild(this);
+          };
+        } else {
+          alert("Please add a value to the item.");
+        }
+      }
+    </script>
+  </body>
+</html>
